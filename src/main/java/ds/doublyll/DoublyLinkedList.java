@@ -24,7 +24,7 @@ public class DoublyLinkedList <E> {
 
     public void insertFirst(E data)
     {
-        Node newNode = new Node(data);
+        Node<E> newNode = new Node<E>(data);
         if(isEmpty())
         {
             last = newNode;
@@ -40,7 +40,7 @@ public class DoublyLinkedList <E> {
     public String print()
     {
         StringBuilder sb = new StringBuilder();
-        Node currentNode = this.first;
+        Node<E> currentNode = this.first;
         while(currentNode != null)
         {
             sb.append(currentNode.getData()).append(" ");
@@ -56,7 +56,7 @@ public class DoublyLinkedList <E> {
 
     public void insertLast(E data) {
 
-        Node newNode = new Node(data);
+        Node<E> newNode = new Node<E>(data);
         if(isEmpty())
         {
             this.first = newNode;
@@ -68,12 +68,12 @@ public class DoublyLinkedList <E> {
         this.last = newNode;
     }
 
-    public Node deleteFirst() {
+    public Node<E> deleteFirst() {
         if(isEmpty())
         {
             return null;
         }
-        Node temp = this.first;
+        Node<E> temp = this.first;
         if(this.first.next == null)
         {
             this.last = null;
@@ -87,7 +87,7 @@ public class DoublyLinkedList <E> {
     }
 
 
-    public Node deleteLast(){
+    public Node<E> deleteLast(){
         if(isEmpty())
         {
             return null;
@@ -100,7 +100,7 @@ public class DoublyLinkedList <E> {
         else {
             this.last.previous.next = null;
         }
-        Node temp = this.last;
+        Node<E> temp = this.last;
         this.last = this.last.previous;
         return temp;
 
@@ -108,8 +108,8 @@ public class DoublyLinkedList <E> {
 
     public boolean insertAfter(E key, E data) {
 
-        Node newNode = new Node(data);
-        Node node = findKey(key);
+        Node<E> newNode = new Node<E>(data);
+        Node<E> node = findKey(key);
 
         if(node == null)
             return false;
@@ -126,8 +126,8 @@ public class DoublyLinkedList <E> {
         return (node != null);
     }
 
-    private Node findKey(E key) {
-        Node currentNode = this.first;
+    private Node<E> findKey(E key) {
+        Node<E> currentNode = this.first;
         while(currentNode != null)
         {
             if(currentNode.getData().equals(key))
@@ -137,9 +137,9 @@ public class DoublyLinkedList <E> {
         return null;
     }
 
-    public Node delete(E key) {
+    public Node<E> delete(E key) {
 
-        Node node = findKey(key);
+        Node<E> node = findKey(key);
         if(node == null)
             return null;
         if(node == this.last)

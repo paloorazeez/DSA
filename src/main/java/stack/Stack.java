@@ -11,7 +11,7 @@ public class Stack<T> {
     private T[] array;
     private int top;
 
-    public Stack(Class clazz, int size) {
+    public Stack(Class<T> clazz, int size) {
         this.maxSize = size;
         this.array = (T[])Array.newInstance(clazz, size);
         this.top = -1;

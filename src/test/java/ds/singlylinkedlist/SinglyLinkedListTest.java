@@ -64,7 +64,7 @@ public class SinglyLinkedListTest {
 
     }
 
-    @Test(timeout = 1000)
+    /*@Test(timeout = 1000)
     public void testInsertLastPerformanceTest()
     {
         SinglyLinkedList ll = new SinglyLinkedList();
@@ -74,7 +74,7 @@ public class SinglyLinkedListTest {
 
         System.out.println((end-start));
 
-    }
+    }*/
 
 
      private void insertHelper(SinglyLinkedList<Integer> ll, int start, int increment, int end) {

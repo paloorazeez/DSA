@@ -3,7 +3,7 @@ package util;
 public class  Node <E> {
 
     E data;
-    Node next;
+    Node<E> next;
 
     public Node(E data)
     {
@@ -11,7 +11,7 @@ public class  Node <E> {
         this.next = null;
     }
 
-    public Node(E data, Node next)
+    public Node(E data, Node<E> next)
     {
         this.data = data;
         this.next = next;
@@ -25,11 +25,11 @@ public class  Node <E> {
         this.data = data;
     }
 
-    public Node getNext() {
+    public Node<E> getNext() {
         return next;
     }
 
-    public void setNext(Node next) {
+    public void setNext(Node<E> next) {
         this.next = next;
     }
 }

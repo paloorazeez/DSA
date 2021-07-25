@@ -17,7 +17,7 @@ public class CircularLinkedList <E> {
 
     public void insertFirst(E data)
     {
-        Node newNode = new Node(data);
+        Node<E> newNode = new Node<E>(data);
         if(isEmpty())
         {
             this.last = newNode;
@@ -29,7 +29,7 @@ public class CircularLinkedList <E> {
 
     public void insertLast(E data)
     {
-        Node newNode = new Node(data);
+        Node<E> newNode = new Node<E>(data);
         if(isEmpty())
         {
             this.first = newNode;
@@ -44,11 +44,11 @@ public class CircularLinkedList <E> {
     }
 
 
-    public Node deleteFirst()
+    public Node<E> deleteFirst()
     {
-        Node first = this.first;
+        Node<E> node = this.first;
         this.first = this.first.getNext();
-        return first;
+        return node;
     }
 
 
@@ -60,7 +60,7 @@ public class CircularLinkedList <E> {
 
     public String print() {
         StringBuilder sb = new StringBuilder();
-        Node currentNode = this.first;
+        Node<E> currentNode = this.first;
         while(currentNode != null)
         {
             sb.append(currentNode.getData()).append(" ");
@@ -70,7 +70,7 @@ public class CircularLinkedList <E> {
     }
 
     public Node<E> deleteLast() {
-        Node temp = this.last;
+        Node<E> temp = this.last;
         
         return temp;
     }

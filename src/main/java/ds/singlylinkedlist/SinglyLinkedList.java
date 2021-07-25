@@ -20,7 +20,7 @@ public class SinglyLinkedList <E>{
 
     public void insertFirst(E data)
     {
-        Node newNode = new Node(data);
+        Node<E> newNode = new Node<E>(data);
         newNode.setNext(first);
         first =newNode;
     }
@@ -28,7 +28,7 @@ public class SinglyLinkedList <E>{
     public String print() {
 
         StringBuilder sb = new StringBuilder();
-        Node currentNode = this.first;
+        Node<E> currentNode = this.first;
         while(currentNode != null)
         {
             sb.append(currentNode.getData());
@@ -38,28 +38,28 @@ public class SinglyLinkedList <E>{
         return sb.toString();
     }
 
-    public Node removeFirst() {
+    public Node<E> removeFirst() {
 
-        Node temp = first;
+        Node<E> temp = first;
         first = first.getNext();
         temp.setNext(null);
         return temp;
     }
 
     public void insertLast(E data) {
-        Node newNode = new Node(data);
+        Node<E> newNode = new Node<E>(data);
         if(first == null)
             first=newNode;
         else{
-            Node temp = getLastNode();
+            Node<E> temp = getLastNode();
             temp.setNext(newNode);
 
         }
 
     }
 
-    private Node getLastNode() {
-        Node temp = first;
+    private Node<E> getLastNode() {
+        Node<E> temp = first;
         //find last node
         while(temp.getNext() != null)
         {
@@ -68,8 +68,8 @@ public class SinglyLinkedList <E>{
         return temp;
     }
 
-    public Node getSecondLastNode() {
-        Node temp = first;
+    public Node<E> getSecondLastNode() {
+        Node<E> temp = first;
         //find last node
         while(temp.getNext() != null && temp.getNext().getNext() != null)
         {
@@ -78,10 +78,10 @@ public class SinglyLinkedList <E>{
         return temp;
     }
 
-    public Node removeLast() {
+    public Node<E> removeLast() {
 
-        Node secondLastNode = getSecondLastNode();
-        Node lastNode = (secondLastNode.getNext() != null)? secondLastNode.getNext() : secondLastNode;
+        Node<E> secondLastNode = getSecondLastNode();
+        Node<E> lastNode = (secondLastNode.getNext() != null)? secondLastNode.getNext() : secondLastNode;
         secondLastNode.setNext(null);
         return lastNode;
     }

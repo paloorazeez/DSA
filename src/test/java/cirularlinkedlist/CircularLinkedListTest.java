@@ -3,6 +3,8 @@ package cirularlinkedlist;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.util.Optional;
+
 public class CircularLinkedListTest {
 
     @Test
@@ -45,7 +47,7 @@ public class CircularLinkedListTest {
         ll.insertFirst((char)99);
         ll.insertFirst((char)100);
 
-        Assert.assertEquals('d', ll.deleteFirst().getData());
+        Assert.assertEquals(Optional.of('d'), Optional.ofNullable(ll.deleteFirst().getData()));
         Assert.assertEquals("c b a ", ll.print());
     }
 

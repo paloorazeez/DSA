@@ -3,6 +3,8 @@ package util;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.util.Optional;
+
 public class NodeTest {
 
     @Test
@@ -11,7 +13,7 @@ public class NodeTest {
         Node<Integer> root = new Node<>(10);
         root.setNext(new Node(20));
 
-        System.out.println(root.getData());
+        Assert.assertEquals(Optional.of(10), java.util.Optional.ofNullable(root.getData()));
         System.out.println(root.getNext().getData());
     }
 

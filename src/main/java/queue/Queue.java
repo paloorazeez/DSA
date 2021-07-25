@@ -14,7 +14,7 @@ public class Queue <T> {
 
     private int rear;
 
-    public Queue(Class clazz, int size) {
+    public Queue(Class<T> clazz, int size) {
 
         this.maxsize = size;
         this.array = (T[])Array.newInstance(clazz,size);
