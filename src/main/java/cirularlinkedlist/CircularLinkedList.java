@@ -1,10 +1,11 @@
 package cirularlinkedlist;
 
-import util.Node;
+
+import ds.doublyll.Node;
 
 public class CircularLinkedList <E> {
 
-    private Node<E> first;
+    private ds.doublyll.Node<E> first;
 
     private Node<E> last;
 

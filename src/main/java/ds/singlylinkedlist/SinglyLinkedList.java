@@ -1,7 +1,9 @@
 package ds.singlylinkedlist;
 
+
+import ds.doublyll.Node;
 import org.omg.CosNaming.NamingContextPackage.NotEmpty;
-import util.Node;
+
 
 public class SinglyLinkedList <E>{
 
